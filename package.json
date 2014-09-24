@@ -1,0 +1,22 @@
+{
+  "name": "explorer",
+  "version": "0.0.0",
+  "description": "explorer ========",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Kroid/explorer.git"
+  },
+  "author": "George M Kroid <kroid@yandex.ru>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kroid/explorer/issues"
+  },
+  "homepage": "https://github.com/Kroid/explorer",
+  "dependencies": {
+    "fs-extra": "^0.12.0"
+  }
+}
