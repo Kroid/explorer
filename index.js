@@ -23,7 +23,18 @@ Explorer.prototype.create = require('./src/create');
 /* Copy file or directory */
 Explorer.prototype.copy = require('./src/copy');
 
-/* Get list of files and directories by path */
+/**
+ *  Get list of files and directories by path
+ *
+ *  @param {string} relative path from basePath
+ *  @param {object} none
+ *  @param {function} callback
+ *
+ *  @returns {string} or {object} or {null}: error message
+ *           {object}: path (relative from basePath),
+ *                     type ('file' or 'directory'),
+ *                     name
+ */
 Explorer.prototype.list = require('./src/list');
 
 /**
