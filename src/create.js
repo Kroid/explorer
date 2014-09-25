@@ -17,7 +17,7 @@ function create(_path, options, cb, self) {
       fse.readFile(absPath, {encoding: 'utf-8'}, function(err, content) {
         if (err) { return cb(err); }
 
-        cb({
+        cb(null, {
           content: content,
           path: relPath,
           type: options.type
@@ -30,7 +30,7 @@ function create(_path, options, cb, self) {
     fse.ensureDir(absPath, function(err) {
       if (err) { return cb(err); }
 
-      cb({
+      cb(null, {
         path: relPath,
         type: options.type
       });

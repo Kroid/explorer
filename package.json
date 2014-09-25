@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Kroid/explorer",
   "dependencies": {
-    "fs-extra": "^0.12.0"
+    "fs-extra": "^0.12.0",
+    "lodash": "^2.4.1"
   }
 }
