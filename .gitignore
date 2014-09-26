@@ -30,4 +30,6 @@ node_modules
 
 .idea
 
-test/sandbox
+test/sandbox/copy/dest
+test/sandbox/create
+test/sandbox/move/dest

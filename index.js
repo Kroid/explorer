@@ -37,6 +37,9 @@ Explorer.prototype.copy = require('./src/copy');
  */
 Explorer.prototype.list = require('./src/list');
 
+/* Move file or directory */
+Explorer.prototype.move = require('./src/move');
+
 /**
  *  Get file content or error if file not exist, if is dir, etc
  *
@@ -53,4 +56,4 @@ Explorer.prototype.read = require('./src/read');
 Explorer.prototype.remove = require('./src/remove');
 
 /* Write data to file */
-Explorer.prototype.write = ('./src/write');
+Explorer.prototype.write = require('./src/write');
