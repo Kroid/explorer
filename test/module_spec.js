@@ -111,4 +111,65 @@ describe('Explorer functions', function() {
       done();
     });
   });
+
+  it('Should copy directory with files', function(done) {
+    explorer = new Explorer(basePath);
+
+    explorer.copy('copy/src/dir', 'copy/dest/dir', function(err, data) {
+      assert.equal(true, !err);
+
+      fs.exists(path.join(basePath, 'copy/dest/dir/file'), function(exists) {
+        assert.equal(true, exists);
+        fs.exists(path.join(basePath, 'copy/dest/dir/anotherFile'), function(exists) {
+          assert.equal(true, exists);
+          done();
+        });
+      });
+    });
+  });
+
+  it('Should move directory with files', function(done) {
+    explorer = new Explorer(basePath);
+
+    explorer.move('move/src/dir', 'move/dest/dir', function(err, data) {
+      assert.equal(true, !err);
+
+      fs.exists(path.join(basePath, 'move/dest/dir/file'), function(exists) {
+        assert.equal(true, exists);
+        fs.exists(path.join(basePath, 'move/dest/dir/anotherFile'), function(exists) {
+          assert.equal(true, exists);
+          done();
+        });
+      });
+    });
+  });
+
+  it('Should remove directory with files', function(done) {
+    explorer = new Explorer(basePath);
+
+    explorer.remove('remove/dir', function(err) {
+      assert.equal(true, !err);
+
+      fs.exists(path.join(basePath, 'remove/dir'), function(exists) {
+        assert.equal(false, exists);
+        done();
+      });
+    });
+  });
+
+  it('Should write content to file', function(done) {
+    explorer = new Explorer(basePath);
+
+    explorer.write('write/file', 'some data', function(err) {
+      assert.equal(true, !err);
+
+      fs.readFile(path.join(basePath, 'write/file'), {encoding: 'utf-8'}, function(err, content) {
+        assert.equal(true, !err);
+
+        assert.equal('some data', content);
+
+        done();
+      });
+    });
+  });
 });
